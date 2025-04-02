@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class test {
+public class Main {
     //Create a frame
     private static JFrame frame;
     public static ArrayList<String> Products = new ArrayList<>();
