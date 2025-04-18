@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class Main {
     //Create a frame
     private static JFrame frame;
@@ -88,5 +89,50 @@ public class Main {
         });
 
         frame.setVisible(true);
+    }
+
+    //Krystian test sale/product without GUI
+    public class ShopCalculator {
+
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            //ask how many products
+            System.out.print("How many products do you want to enter? ");
+            int numberOfProducts = scanner.nextInt();
+
+            double totalCost = 0; 
+
+            //how many products
+            for (int i = 1; i <= numberOfProducts; i++) {
+                System.out.println("\nProduct " + i + ":");
+
+                //product name
+                System.out.print("Enter product name: ");
+                scanner.nextLine(); 
+                String name = scanner.nextLine();
+
+                //price
+                System.out.print("Enter price of " + name + ": ");
+                double price = scanner.nextDouble();
+
+                //amount
+                System.out.print("Enter quantity of " + name + ": ");
+                int quantity = scanner.nextInt();
+
+                //math
+                double productTotal = price * quantity;
+                totalCost += productTotal;
+
+                System.out.println("Cost for " + name + ": $" + productTotal);
+            }
+
+            //total cost
+            System.out.println("\n==========================");
+            System.out.println("Total cost for all products: $" + totalCost);
+            System.out.println("==========================");
+
+            scanner.close();
+        }
     }
 }
