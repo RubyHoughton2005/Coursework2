@@ -89,4 +89,19 @@ public class Main {
 
         frame.setVisible(true);
     }
+    public static void back_button(){ // Will be used multiple times and therefore better as an independent method
+        JButton back = new JButton("Back");
+        frame.add(back);// Adds back button to relevent areas
+        back.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.getContentPane().removeAll();// Emptys the current frame
+                frame.revalidate();
+                frame.repaint();
+                initialize(); // Reruns the initialization
+                frame.setVisible(true);
+            }
+        });
+
+    }
 }
